@@ -1,0 +1,29 @@
+# Render Blueprint Configuration
+# This file can be used to deploy your backend service on Render
+# Go to Render Dashboard → New → Blueprint → Connect this repo
+
+services:
+  - type: web
+    name: mern-auth-backend
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      # Add these in Render Dashboard after creating the service:
+      # - MONGODB_URI (from MongoDB Atlas)
+      # - JWT_SECRET (generate a strong random string)
+      # - SMTP_USER (your Gmail address)
+      # - SMTP_PASSWORD (Gmail App Password)
+      # - SENDER_EMAIL (your Gmail address)
+      # - FRONTEND_URL (your Netlify URL - set after frontend deployment)
+
+
+
+
+
+
+
